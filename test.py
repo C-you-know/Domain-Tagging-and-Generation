@@ -1,4 +1,4 @@
-from wikipedia_article_judger import judge
+from ks_domain_tagger import judge
 import time
 import sys
 from termcolor import colored

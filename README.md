@@ -1,4 +1,4 @@
-# Wikipedia Article Judger
+# KS Domain Tagger
 
 A Python tool to analyze a given paragraph, identify relevant Wikipedia articles, and score their relevance. It uses keyword extraction, Wikipedia API searches, and fuzzy string matching to determine the most appropriate articles.
 
@@ -16,14 +16,14 @@ A Python tool to analyze a given paragraph, identify relevant Wikipedia articles
 Once packaged and uploaded to PyPI, you will be able to install it using pip:
 
 ```bash
-pip install wikipedia_article_judger
+pip install ks-domain-tagger
 ```
 
 For now, you can clone the repository and install dependencies manually:
 
 ```bash
-git clone https://github.com/yourusername/wikipedia_article_judger # Replace with actual URL
-cd wikipedia_article_judger
+git clone https://github.com/C-you-know/Domain-Tagging-and-Generation # Replace with actual URL
+cd ks-domain-tagger
 pip install -r requirements.txt # You might need to create this file or install manually
 ```
 *(Note: A `requirements.txt` would be useful for local development. The dependencies are listed in `setup.py` for PyPI installation.)*
@@ -33,7 +33,7 @@ pip install -r requirements.txt # You might need to create this file or install 
 To use the `judge` function, you can import it into your Python script:
 
 ```python
-from wikipedia_article_judger import judge # Assuming __init__.py makes judge available
+from ks_domain_tagger import judge # Assuming __init__.py makes judge available
 
 paragraph_to_analyze = """
 Manmohan Singh, an economist and politician, served as the 13th Prime Minister of India
