@@ -1,4 +1,4 @@
-import judge
+from wikipedia_article_judger import judge
 import time
 import sys
 from termcolor import colored

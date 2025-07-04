@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup, SoupStrainer
 from typing import List,Dict
-import paragraphs as pg
+from . import paragraphs as pg
 from urllib.parse import urljoin
 from collections import Counter
 
