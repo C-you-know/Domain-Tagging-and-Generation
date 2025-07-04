@@ -1,8 +1,8 @@
-import rater
-import keywords
-import paragraphs
+from . import rater
+from . import keywords
+from . import paragraphs
 import numpy as np
-import knowledgebase as kb
+from . import knowledgebase as kb
 
 def judge(para:str, threshold:int = 50, pass2: bool = False, threshold2:int = 53, visit_all_pages:bool = False) -> dict:
 
