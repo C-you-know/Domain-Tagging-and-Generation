@@ -1,3 +1,7 @@
+[![PyPI version](https://badge.fury.io/py/ks-domain-tagger.svg)](https://pypi.org/project/ks-domain-tagger/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/ks-domain-tagger.svg)](https://pypi.org/project/ks-domain-tagger/)
+
+
 # KS Domain Tagger
 
 A Python tool to analyze a given paragraph, identify relevant Wikipedia articles, and score their relevance. It uses keyword extraction, Wikipedia API searches, and fuzzy string matching to determine the most appropriate articles.
