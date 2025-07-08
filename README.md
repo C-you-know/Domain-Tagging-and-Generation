@@ -13,20 +13,9 @@ A Python tool to analyze a given paragraph, identify relevant Wikipedia articles
 
 ## Installation
 
-Once packaged and uploaded to PyPI, you will be able to install it using pip:
-
 ```bash
 pip install ks-domain-tagger
 ```
-
-For now, you can clone the repository and install dependencies manually:
-
-```bash
-git clone https://github.com/C-you-know/Domain-Tagging-and-Generation # Replace with actual URL
-cd ks-domain-tagger
-pip install -r requirements.txt # You might need to create this file or install manually
-```
-*(Note: A `requirements.txt` would be useful for local development. The dependencies are listed in `setup.py` for PyPI installation.)*
 
 ## Usage
 
@@ -94,4 +83,3 @@ These will be handled automatically if installing via pip from PyPI.
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
-*(Note: Assumes a LICENSE file with MIT License content exists. Ensure this matches the license in `setup.py`)*.
