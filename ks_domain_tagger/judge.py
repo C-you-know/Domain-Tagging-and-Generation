@@ -4,7 +4,7 @@ from . import paragraphs
 import numpy as np
 from . import knowledgebase as kb
 
-def judge(para:str, threshold:int = 50, pass2: bool = False, threshold2:int = 53, visit_all_pages:bool = False) -> dict:
+def judge(para:str, threshold:int = 50, pass2: bool = False, threshold2:int = 53, visit_all_pages:bool = False, abstraction:bool = False) -> dict:
 
     empty_para = paragraphs.para_empty(para)
     invalid_para = paragraphs.validate_para(para)
@@ -36,7 +36,7 @@ def judge(para:str, threshold:int = 50, pass2: bool = False, threshold2:int = 53
     rater.print_output(output)
 
     print()
-    kb.tests(urls)
+    if abstraction: kb.abstractions(urls)
 
     if not pass2:
         return output

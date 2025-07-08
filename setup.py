@@ -4,21 +4,21 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="ks-domain-tagger", # Replace with your own username
+    name="ks-domain-tagger", 
     version="0.1.0",
-    author="Chinmay J S", # Replace with your name
-    author_email="Chinmay.you.know@gmail.com", # Replace with your email
+    author="Chinmay J S",
+    author_email="Chinmay.you.know@gmail.com", 
     description="A tool to find relevant Wikipedia articles for a given paragraph and score them.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/C-you-know/Domain-Tagging-and-Generation", # Replace with your project's URL
+    url="https://github.com/C-you-know/Domain-Tagging-and-Generation", 
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License", # Assuming MIT License, update if different
+        "License :: OSI Approved :: MIT License", 
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.7', # Based on f-strings and type hints, Python 3.7+ is a safe bet
+    python_requires='>=3.7', 
     install_requires=[
         "nltk>=3.6",
         "scikit-learn>=1.0",
@@ -30,8 +30,6 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            # If you want a command-line interface, define it here
-            # 'wikijudge=ks_domain_tagger.judge:main_cli_function', # Example
         ],
     },
 )

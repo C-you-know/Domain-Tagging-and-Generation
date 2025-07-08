@@ -181,47 +181,47 @@ def get_hrefs_from_urls(urls: List[str], verbose:bool = False, global_:bool = Fa
 
     return hrefs_
 
-def tests(urls: List[str]) -> None:
+def abstractions(urls: List[str]) -> None:
     """
-    Fetches and prints the first two valid href names from the summary section of each Wikipedia page in a list of URLs.
-
+    Fetches and prints a combined list of up to 2 valid href names from each Wikipedia URL in the input list.
+    
     Parameters:
-        urls (List[str]): A list of URLs to scrape for href names.
-
+        urls (List[str]): A list of Wikipedia URLs.
+    
     Returns:
-        None
+        None (prints the result)
     """
+    all_abstractions = []
+
     for url in set(urls):
         try:
             response = requests.get(url)
             response.raise_for_status()
 
             soup = BeautifulSoup(response.text, 'html.parser')
-
             content = soup.find(id="mw-content-text")
             if not content:
                 print(f"Could not find content section in URL: {url}")
                 continue
 
             paragraphs = content.find_all('p', limit=2)
-            
+
             hrefs = []
             for section in paragraphs:
                 hrefs.extend(a['href'] for a in section.find_all('a', href=True))
 
-            # Filter valid href links and extract names
             valid_hrefs = [
-    href.split('/')[-1].replace('_', ' ')
-    for href in hrefs
-    if (
-        '#' not in href and
-        ':' not in href and
-        not href.endswith(('.ogg', '.mp3', '.jpg', '.png', '.svg', '.jpeg')) and
-        href.startswith('/wiki/'))
-    ]
+                href.split('/')[-1].replace('_', ' ')
+                for href in hrefs
+                if (
+                    '#' not in href and
+                    ':' not in href and
+                    not href.endswith(('.ogg', '.mp3', '.jpg', '.png', '.svg', '.jpeg')) and
+                    href.startswith('/wiki/')
+                )
+            ]
 
-
-            # Get the first two unique names
+            # Grab first 2 unique names per URL
             filtered_names = []
             for name in valid_hrefs:
                 if name not in filtered_names:
@@ -229,14 +229,12 @@ def tests(urls: List[str]) -> None:
                 if len(filtered_names) == 2:
                     break
 
-            # Print the names
-            print(f"URL: {url}")
-            if filtered_names:
-                print("First two names:", filtered_names)
-            else:
-                print("No valid names found.")
-            print()
+            all_abstractions.extend(filtered_names)
 
         except requests.exceptions.RequestException as e:
             print(f"An error occurred while processing URL '{url}': {e}")
+        except Exception as e:
+            print(f"Unexpected error with URL '{url}': {e}")
+
+    print("Possible Abstractions:", all_abstractions)
 
