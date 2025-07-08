@@ -23,7 +23,7 @@ for i in range(1, len(paragraphs)+1):
     print(colored(f"Testing Test Case-{i}", "yellow") + "\n")
     start_time = time.time()
 
-    out = judge(paragraphs[i-1])
+    out = judge(paragraphs[i-1], abstraction=True)
     
     done_time = time.time()
     print(colored(f"\nTime Taken for Test Case-{i}: {round(done_time-start_time, 2)} seconds\n", "green"))
