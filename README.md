@@ -26,7 +26,7 @@ pip install ks-domain-tagger
 To use the `judge` function, you can import it into your Python script:
 
 ```python
-from ks_domain_tagger import judge # Assuming __init__.py makes judge available
+from ks_domain_tagger import judge 
 
 paragraph_to_analyze = """
 Manmohan Singh, an economist and politician, served as the 13th Prime Minister of India
